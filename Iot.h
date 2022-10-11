@@ -25,6 +25,9 @@ class Iot
         void ControlValve();
         void SendBluetoothSignal(SoftwareSerial* p_hc06);
         void TestFunction(Adafruit_NeoPixel* p_neo_pixel, Servo* p_servo);
+        void SensorWindow(char cmd);
+        void SensorFan(char cmd);
+
     private:
         int first_pin_;
         int num_of_iots_;

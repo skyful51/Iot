@@ -145,3 +145,26 @@ void Iot::TestFunction(Adafruit_NeoPixel* p_neo_pixel, Servo* p_servo)
 
     delay(2000);
 }
+
+// 센서 값에 따라 창문, 환풍기 제어
+void Iot::SensorWindow(char cmd)
+{
+    if (cmd == 'c')
+    {
+        digitalWrite(first_pin_ + 3, LOW);
+        p_servo->write(0);
+    }
+    else if (cmd == 'o')
+    {
+        digitalWrite(first_pin_ + 3, HIGH);
+        p_servo->write(45);
+    }
+}
+
+void Iot::SensorFan(char cmd)
+{
+    if (cmd_ == 'c')
+        digitalWrite(first_pin_ + 2, LOW);
+    else if (cmd_ == 'o')
+        digitalWrite(first_pin_ + 2, HIGH);
+}
