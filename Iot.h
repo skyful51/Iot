@@ -24,7 +24,8 @@ class Iot
         void ControlWindow(Servo* p_servo);
         void ControlValve();
         void SendBluetoothSignal(SoftwareSerial* p_hc06);
-        void TestFunction(Adafruit_NeoPixel* p_neo_pixel, Servo* p_servo);
+        
+        // 센서 클래스 추가로 추가된 메서드
         void SensorWindow(char cmd);
         void SensorFan(char cmd);
 

@@ -116,36 +116,6 @@ void Iot::SendBluetoothSignal(SoftwareSerial* p_hc06)
     p_hc06->write("q");
 }
 
-void Iot::TestFunction(Adafruit_NeoPixel* p_neo_pixel, Servo* p_servo)
-{
-    for (int i = 0; i < num_of_iots_; i++)
-    {
-        digitalWrite(first_pin_ + i, HIGH);
-    }
-
-    for (int i = 0; i < num_of_pixels_; i++)
-    {
-        p_neo_pixel->setPixelColor(i, 25, 25, 25);
-    }
-    p_neo_pixel->show();
-
-    p_servo->write(45);
-
-    delay(2000);
-
-    for (int i = 0; i < num_of_iots_; i++)
-    {
-        digitalWrite(first_pin_ + i, LOW);
-    }
-
-    p_neo_pixel->clear();
-    p_neo_pixel->show();
-
-    p_servo->write(0);
-
-    delay(2000);
-}
-
 // 센서 값에 따라 창문, 환풍기 제어
 void Iot::SensorWindow(char cmd)
 {
