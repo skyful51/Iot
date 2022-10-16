@@ -117,6 +117,15 @@ void Iot::SendBluetoothSignal(SoftwareSerial* p_hc06)
 }
 
 // 센서 값에 따라 창문, 환풍기 제어
+void Iot::GetCommandSignal(SoftwareSerial* p_hc06,
+                           Adafruit_NeoPixel* p_neo_pixel,
+                           Servo* p_servo)
+{
+    Sensor::Sensor(dust_pin, gas_pin, rain_pin);    // 어느 핀에 연결할 지 결정해 수정할 것
+    Sensor::Startsensing();
+}
+
+
 void Iot::SensorWindow(char cmd)
 {
     if (cmd == 'c')

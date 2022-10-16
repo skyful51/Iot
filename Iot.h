@@ -26,6 +26,10 @@ class Iot
         void SendBluetoothSignal(SoftwareSerial* p_hc06);
         
         // 센서 클래스 추가로 추가된 메서드
+        void ReadSensor(
+            SoftwareSerial* p_hc06,
+            Adafruit_NeoPixel* p_neo_pixel,
+            Servo* p_servo);
         void SensorWindow(char cmd);
         void SensorFan(char cmd);
 
