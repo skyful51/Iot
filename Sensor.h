@@ -4,12 +4,19 @@
 #include "Arduino.h"
 #include "Iot.h"
 
+// 각 센서의 동작 임계값
+#define DUST_THRESH 3
+#define GAS_THRESH 3
+#define RAIN_THRESH 3
+
 class Sensor
 {
     public:
 
         // 생성자
         Sensor(int dust_pin, int gas_pin, int rain_pin);
+
+        void StartSensing();
 
         // 각 센서로부터 센서값을 읽어오는 메서드
         void GetDustValue();
@@ -30,14 +37,10 @@ class Sensor
         int gat_led_pin_;
         int rain_led_pin;
 
-        // 각 센서의 임계값
-        float dust_threshold_;
-        float gas_threshold_;
-        float rain_threshold_;
-
         // 실내 공기질, 야외 먼지 플래그
         bool is_gas_;
         bool is_dust_;
-}
+        bool is_rain_;
+};
 
 #endif
